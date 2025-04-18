@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Typing Speed Test</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="overlay">
+    <div class="container">
+      <h1>💻 Typing Speed & Accuracy Test</h1>
+
+      <label for="wordCount">Choose word count:</label>
+      <select id="wordCount">
+        <option value="10">10 Words</option>
+        <option value="20">20 Words</option>
+        <option value="30">30 Words</option>
+        <option value="40">40 Words</option>
+        <option value="50">50 Words</option>
+      </select>
+
+      <button id="startBtn" onclick="startTest()">Start Test</button>
+
+      <div class="sentence-box" id="sentence"></div>
+
+      <textarea
+        id="input"
+        placeholder="Start typing here..."
+        disabled
+        oninput="checkTyping()"
+      ></textarea>
+
+      <div class="results">
+        <p>⏱ Time: <span id="time">0.00</span>s</p>
+        <p>⌨️ Speed: <span id="wpm">0</span> WPM</p>
+        <p>🎯 Accuracy: <span id="accuracy">0</span>%</p>
+      </div>
+
+      <button id="retryBtn" onclick="retryTest()" style="display: none;">🔁 Retry</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
